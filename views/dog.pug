@@ -6,11 +6,16 @@ block content
         - let o;
         div(class="row")
             each form,item in results
+                - let destination = `dispatch(\"/dog/update?id=${form._id}\")`
                 div(class = "col-sm-2 bg-primary" onclick=`buy(${item})`) #{form.dog_color}              
                 div(class = "col-sm-2 bg-primary" onclick=`buy(${item})`) #{form.dog_breed}                
                 div(class = "col-sm-2 bg-primary" onclick=`buy(${item})`) #{form.dog_price}
+                   button.btn( class="btn-primary ml-1", onclick= destination) Update
                 hr
     script.
+        function dispatch(path){
+            window.location.href=path
+        }
         function buy(itemNo)
         {
             alert(`You purchased Item ${itemNo+1}`)

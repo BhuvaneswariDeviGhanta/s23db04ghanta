@@ -4,25 +4,25 @@ block content
   if (toShow == null)
     h2(class='dog') No instance to update
   else
-  - let DOG id = toShow._id
-  - let dog_color = toShow.dog_color
-  - let dog_breed = toShow.dog_breed
-  - let dog_price = toShow.dog_price
-  div.row(class='mb-2')
-    div.mr-1 ID is
-      div #{DOGid}
-      - let DOGid = "/resource/dogs/" + DOG id
-      form(id='dogForm', action= dogid, method="PUT")
-        div.form-group
-          label.dogAttr(for='dog_color') dog_color
-          input#dog_color(type='String', name='dog_color', value= dog_color )
-        div.form-group
-          label.dogAttr(for='dog_breed') dog_breed
-          input#size(type='String', name='dog_breed', value= dog_breed )
-        div.form-group
-          label.dogAttr(for='dog_price') dog_price
-          input#cost(type='number', name='dog_price', value= dog_price )
-        input(type="submit")
+    - let DOGid = toShow._id
+    - let dog_color = toShow.dog_color
+    - let dog_breed = toShow.dog_breed
+    - let dog_price = toShow.dog_price
+    div.row(class='mb-2')
+      div.mr-1 ID is
+        div #{DOGid}
+        - let DOGid = "/resource/dog/" + DOGid
+        form(id='dogForm', action= dogid, method="PUT")
+          div.form-group
+            label.dogAttr(for='dog_color') dog_color
+            input#dog_color(type='String', name='dog_color', value= dog_color )
+          div.form-group
+            label.dogAttr(for='dog_breed') dog_breed
+            input#size(type='String', name='dog_breed', value= dog_breed )
+          div.form-group
+            label.dogAttr(for='dog_price') dog_price
+            input#cost(type='number', name='dog_price', value= dog_price )
+          input(type="submit")
   script.
     document.forms['dogForm'].addEventListener('submit', (event) => {
       event.preventDefault();
