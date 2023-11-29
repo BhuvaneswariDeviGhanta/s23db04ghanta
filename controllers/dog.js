@@ -128,7 +128,7 @@ exports.dog_create_Page = function(req, res) {
     }
     catch(err){
     res.status(500)
-    res.send(`{'error': '${err}'}`);
+    res.send(`{ '${err}'}`);
     }
     };
     // Handle a delete one view with id from query
